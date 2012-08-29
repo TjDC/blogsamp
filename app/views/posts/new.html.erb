@@ -1,0 +1,25 @@
+<h1>Add a New Post</h1>
+
+<%= form_for @post do |t| %>
+    <p>
+        <% if @post.errors.any? %>
+            <h2>Errors:</h2>
+            <ul>
+               <% @post.errors.full_messages.each do |message| %>
+                 <li><%= message %></li>
+               <% end %>
+            </ul>
+        <% end %>
+    </p>
+    <p>
+        <%= t.label :title %><br />
+        <%= t.text_field :title %>
+    </p>
+    <p>
+        <%= t.label :body %><br />
+        <%= t.text_area :body %>
+    </p>
+    <p>
+      <%= t.submit "Add a New Post" %>
+    </p>
+<% end %>

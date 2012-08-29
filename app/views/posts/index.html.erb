@@ -1,0 +1,13 @@
+<h1>Blog sample</h1>
+
+<% @posts.each do |post| %>
+    <h2><%= link_to post.title, post %></h2>
+    <p><%= post.body %></p>
+    <p>
+       <%= link_to "Edit", edit_post_path(post) %> |
+       <%= link_to "Delete", post, :confirm => "Are you Sure?", :method => :delete %>
+    </p>
+    <hr />
+<% end %>
+
+<p><%= link_to "Add a new Post", new_post_path %></p>
